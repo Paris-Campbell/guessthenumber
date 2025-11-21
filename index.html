@@ -24,7 +24,17 @@ const targetNumber = Math.floor(Math.random() * 100) + 1;
 // === TODO: Step 2 ===
 // Compare input to target number.
 
-
+document.getElementById('checkBtn').addEventListener('click', function() {
+  const userGuess = Number(document.getElementById('guess').value);
+  const feedback = document.getElementById('feedback');
+  if (userGuess === targetNumber) {
+    feedback.textContent = "Correct! You guessed the right number!";
+  } else if (userGuess < targetNumber) {
+    feedback.textContent = "Too low! Try again.";
+  } else {
+    feedback.textContent = "Too high! Try again.";
+  }
+});
 
 
 
